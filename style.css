@@ -1,0 +1,446 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --first-color: #a9eaff;
+    --second-color: #768DFE;
+    --dark-bg-color: #01012e;
+    --light-text: #ffffff; 
+    --dark-text: #000000; 
+    --inactive-gray: #d5d5d5;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+li a {
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 2vw;
+    padding-bottom: 0.5em;
+}
+
+img{
+    width: 100%;
+}
+
+section{
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/*--MEDIA QUERIES--*/
+
+
+/*--desktop--*/
+@media only screen and (min-width: 1275px){
+    /*nav*/
+    nav{
+        position: fixed;
+        background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+    }
+    nav ul{
+        flex-direction: row;
+    }   
+    
+    nav li a:active,a:hover{
+        color: var(--first-color);
+    }
+    li.logo{
+        width: 15%;
+    }
+
+    /*slideshow*/
+    .headerslide{
+        height: 60vh;
+    }
+    .headerslide .text{
+        width: 60%;
+    }
+    .webpage_sample_div{
+        width: 45%;
+    }
+    h1,h2,h3,h4{
+        font-size: 2vw;
+    }
+
+    /*--slideshow pager--*/
+    .cycle-pager span { 
+        font-size: 1vw; 
+    }
+
+    /*--species cards--*/
+    .species_card{
+        margin-bottom: 2em;
+        display: flex;
+    }
+    .species_image{
+        width: 40%;
+        display: inline-block;
+    }    
+    .species_text{
+        width: 60%;
+        padding-left: 2em;        
+        display: inline-block;
+    }
+
+    footer ul{
+        justify-content: center;
+    }
+
+    footer li i{
+        padding: 1em;
+    }
+}
+
+
+/*--tablet--*/
+@media only screen and (min-width: 600px) and (max-width: 1275px){
+    /*nav*/
+    nav{
+        position: sticky;
+        background-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.6));
+    }
+    nav ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    nav li a:active,a:hover{
+        color: var(--first-color);
+    }
+    li.logo{
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    /*slideshow*/
+    .headerslide{
+        height: 50vh;
+    }
+    .headerslide .text{
+        width: 60%;
+    }
+    .webpage_sample_div{
+        width: 100%;
+    }
+    h1,h2,h3,h4{
+        font-size: 3vw;
+    }
+
+    /*--slideshow pager--*/
+    .cycle-pager span { 
+        font-size: 2.5vw; 
+    }
+
+    /*--species cards--*/
+    .species_card{
+        flex-wrap: wrap;
+    }
+    .species_image{
+        width: 100%;
+        display: inline-block;        
+    }    
+    .species_text{
+        width: 100%;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        display: inline-block;
+    }
+
+
+    /*footer*/
+    footer ul{
+        justify-content: center;
+    }
+    footer li i{
+        padding: 1em;
+    }
+}
+    
+
+
+/*--phone--*/
+@media only screen and (max-width: 600px){
+    /*nav*/
+    nav{
+        position: sticky;
+        background-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.6));
+    }
+    nav ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    li.logo{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /*slideshow*/
+    .headerslide{
+        height: 45vh;
+    }
+    .headerslide .text{
+        width: 80%;
+    }
+    .webpage_sample_div{
+        width: 100%;
+    }
+    h1,h2,h3,h4{
+        font-family: 'Quattrocento Sans', sans-serif;
+        font-size: 5vw;
+    }
+
+    /*--slideshow pager--*/
+    .cycle-pager span { 
+        font-size: 4.5vw; 
+    }
+
+    /*--species cards--*/
+    .species_card{
+        margin: auto 0;
+        flex-wrap: wrap;
+    }
+    .species_image{
+        width: 100%;
+        display: inline-block;
+    }    
+    .species_text{
+        width: 100%;           
+        padding-top: 2em;
+        padding-bottom: 2em;
+        display: inline-block;
+    }
+
+    /*footer*/
+    footer ul{
+        justify-content: space-between;
+    }
+    footer li i{
+        padding: 1em 0;
+    }
+}
+
+
+/*--NAV--*/
+
+nav{
+    top: 0;
+    padding: 2em 0;
+    z-index: 999;
+    widtH: 100%;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+}
+
+nav ul li{
+    margin: 0 1em;
+}
+
+nav a{
+    color: var(--light-text);
+}
+
+li a.cta-link{
+    background-color: var(--second-color);
+    color: var(--dark-text);
+    font-weight: bold;
+}
+
+.active_page{
+    color: var(--first-color);
+}
+
+
+/*--SLIDESHOW--*/
+
+header{
+    position: relative;
+}
+
+.headercover_left,.headercover_right{
+    position: absolute;
+    z-index: 100;
+    width: 20%;
+    height: 100%;
+    top: 0;
+}
+
+.headercover_left{
+    left: 0;
+    background-image: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,0));
+}
+
+.headercover_right{
+    right: 0;
+    background-image: linear-gradient(to left, rgba(0,0,0,.8), rgba(0,0,0,0));
+
+}
+
+.headerslide{
+    position: relative;
+    width: 100%;
+}
+
+/*--inside slideshow--*/
+
+.flex-text{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.headerslide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.headerslide h3{
+    font-size: 2em;
+}
+
+.headerslide .text{
+    padding: 3em;
+    margin-bottom: 2em;
+    position: absolute;    
+    color: var(--light-text);
+}
+
+/*--slideshow pager--*/
+
+.cycle-pager { 
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    margin-bottom: 1.5em;
+}
+.cycle-pager span { 
+    color: var(--inactive-gray); 
+    cursor: pointer;
+    margin: 0.2em; 
+
+}
+.cycle-pager span.cycle-pager-active { 
+    color: var(--dark-bg-color);
+}
+
+.cycle-pager > * {
+    cursor: pointer;
+}
+
+/*--HOMEPAGE DESCRIPTION--*/
+
+.homepage_description{
+    width: 80%;
+    margin: 0 auto;
+    padding: 3em 0;
+}
+
+/*--WEBPAGE SAMPLES--*/
+
+.webpage_samples{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.webpage_sample_div{
+    padding-bottom: 1.5em;
+}
+
+.webpage_text{
+    padding: 2em 0;
+}
+
+.webpage_samples p{
+    padding-bottom: 1em;
+}
+
+/*--button--*/
+
+.webpage_samples a{
+    display: inline-block;
+    color: var(--dark-bg-color);
+    padding: 1.2em;
+    border: solid 1.5px var(--dark-bg-color);
+}
+
+.webpage_samples a:hover{
+    background-color: var(--dark-bg-color);
+    color: var(--light-text);
+}
+
+/*--SIGN UP--*/
+
+#sign-up{
+    background-image: url(images/sign-up-background.jpg);
+    z-index: 1;
+    padding: 5em 0;
+    margin: 0;
+    width: 100%;
+    background-position: left;
+    background-position: cover;
+}
+
+#sign-up h3{
+    text-align: center;
+    text-shadow: 0 0 20px var(--dark-text), 0 0 20px var(--dark-text);
+}
+
+#sign-up .btn{
+    background-color: var(--second-color);
+    color: var(--dark-text);
+    font-weight: bold;
+    width: 100%;
+}
+
+/*--FOOTER--*/
+
+i{
+    font-size: 2em;
+}
+
+footer{
+    background-color: var(--dark-bg-color);
+}
+
+footer ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0 auto;
+    width: 80%;
+}
+
+footer li i{
+    color: var(--light-text);
+}
+
+/*--SPECIES INFO--*/
+
+.species_card{
+    display: flex;
+    margin-bottom: 3em;
+}
